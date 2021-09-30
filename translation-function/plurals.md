@@ -1,20 +1,20 @@
 # Plurals
 
-## Plurals
-
 Plural can be combined with interpolation, context, ...
 
 This plurals are streamlines with the one used in the [Intl API](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/PluralRules/PluralRules).
 
 {% hint style="danger" %}
-Note: The variable name must be `count`.
+Note: The variable name must be `count`.   
+And it must be present: `i18next.t('key', {count: 1});`  
+There will be **no** fallback to the `'key'` value if count is not provided.
 {% endhint %}
 
 {% hint style="info" %}
 If you need multiple counts, take a look at [nesting](nesting.md#passing-options-to-nestings)
 {% endhint %}
 
-### Singular / Plural
+## Singular / Plural
 
 keys
 
@@ -45,7 +45,7 @@ With [v21.0.0](../misc/migration-guide.md#json-format-v4-pluralization) a new [J
 To convert your existing translations to the new v4 format, have a look at [i18next-v4-format-converter](https://github.com/i18next/i18next-v4-format-converter) or [this web tool](https://i18next.github.io/i18next-v4-format-converter-web/).
 {% endhint %}
 
-### Languages with multiple plurals
+## Languages with multiple plurals
 
 Sample uses arabic which has 5 plural forms beside the singular.
 
@@ -76,7 +76,7 @@ i18next.t('key', {count: 99}); // -> "many"
 i18next.t('key', {count: 100}); // -> "other"
 ```
 
-### How to find the correct plural suffix?
+## How to find the correct plural suffix?
 
 You can use this small utility to get the correct plural suffixes.
 
@@ -88,7 +88,7 @@ _Or try_ [_translation-check_](https://github.com/locize/translation-check)_, it
 
 ![](../.gitbook/assets/locize_plurals.png)
 
-### Ordinal plurals
+## Ordinal plurals
 
 There is also support for ordinal numbers _\(referring to the ordering or ranking of things, e.g. "1st", "2nd", "3rd" in English\)_.
 
@@ -113,7 +113,7 @@ i18next.t('key', {count: 11}); // -> "other"
 i18next.t('key', {count: 11, ordinal: true}); // -> "many"
 ```
 
-### Interval plurals
+## Interval plurals
 
 Want to define phrases expressing the number of items lies in a range. Like _a few items_ or _a lot of items_.
 
